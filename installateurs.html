@@ -136,6 +136,8 @@ inscription. <a href="departements.html">Voir les départements →</a></p>
   var btn = document.getElementById('order-btn');
   var msg = document.getElementById('order-msg');
   var inp = document.getElementById('order-dept');
+  var pre = new URLSearchParams(location.search).get('d');
+  if (pre && inp) inp.value = pre;
   btn.addEventListener('click', function(){
     var v = (inp.value || '').trim();
     if (!v) { inp.focus(); return; }
