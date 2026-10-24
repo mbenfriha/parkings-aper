@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fichiers parkings APER par département — installateurs et bureaux d'études</title>
+<meta name="description" content="Le recensement complet des parcs de stationnement extérieurs de plus de 1 500 m², département par département : surface, commune, coordonnées, échéance, puissance estimée. Fichier CSV à 149 €, sans exclusivité ni abonnement.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html">Parkings<span>APER</span></a>
+  <nav class="top">
+    <a href="index.html#verifier">Vérifier un parking</a>
+    <a href="departements.html">Départements</a>
+    <a href="installateurs.html">Installateurs</a>
+    <a href="methode.html">Méthode &amp; sources</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<h1>Les parkings concernés, votre département, un fichier.</h1>
+<p class="lead">Vous installez des ombrières ou vous montez des projets photovoltaïques. Vos prospects
+sont écrits dans une loi : tout parc de stationnement extérieur de plus de 1 500 m², avec une échéance
+en 2026 ou 2028 et une sanction annuelle à la clé. Nous avons recensé ces parcs dans la donnée IGN,
+département par département. Nous vous vendons le fichier. C'est tout.</p>
+
+<div class="price">
+  <div class="p">
+    <div class="small muted">Un département</div>
+    <div class="amount">149 €</div>
+    <div class="small">TTC, paiement unique</div>
+    <ul>
+      <li>Fichier CSV complet du département</li>
+      <li>Surface, commune, coordonnées, échéance</li>
+      <li>kWc et production estimés</li>
+      <li>Livraison immédiate par email</li>
+    </ul>
+  </div>
+  <div class="p best">
+    <div class="small muted">Cinq départements</div>
+    <div class="amount">490 €</div>
+    <div class="small">TTC, soit 98 € / département</div>
+    <ul>
+      <li>Tout ce qui précède</li>
+      <li>Vos cinq zones de prospection</li>
+      <li>Mise à jour trimestrielle offerte 1 an</li>
+    </ul>
+  </div>
+  <div class="p">
+    <div class="small muted">France entière</div>
+    <div class="amount">1 490 €</div>
+    <div class="small">TTC, 96 départements</div>
+    <ul>
+      <li>85 606 parcs recensés</li>
+      <li>6 597 parcs ≥ 10 000 m²</li>
+      <li>Licence d'usage interne illimitée</li>
+    </ul>
+  </div>
+</div>
+
+<div id="devis" class="tool">
+  <h2>Commander un fichier</h2>
+  <p id="buy-state">Choisissez votre département dans la liste, puis commandez. Le fichier est envoyé
+  par email après paiement.</p>
+  <div class="row">
+    <input type="text" id="order-dept" placeholder="Département (ex. 77 ou Seine-et-Marne)">
+    <button class="btn amber" id="order-btn">Commander — 149 €</button>
+  </div>
+  <p class="small" id="order-msg" style="margin-top:12px;color:#c9d6d0"></p>
+</div>
+
+<h2>Ce qu'il y a dans le fichier</h2>
+<table>
+  <thead><tr><th>Colonne</th><th>Contenu</th><th>Exemple</th></tr></thead>
+  <tbody>
+    <tr><td><code>surface_m2</code></td><td>Surface du parc selon la couche IGN</td><td class="num">8 120</td></tr>
+    <tr><td><code>commune</code> / <code>insee</code></td><td>Commune d'implantation</td><td>Melun / 77288</td></tr>
+    <tr><td><code>lat</code> / <code>lon</code></td><td>Centroïde du parc (WGS84)</td><td>48.5401 / 2.6603</td></tr>
+    <tr><td><code>tranche</code></td><td>1 500–10 000 m² ou ≥ 10 000 m²</td><td>1 500–10 000 m²</td></tr>
+    <tr><td><code>echeance</code></td><td>Échéance de principe applicable</td><td>2028-07-01</td></tr>
+    <tr><td><code>ombrage_m2</code></td><td>Surface à ombrager (50 %)</td><td class="num">4 060</td></tr>
+    <tr><td><code>pv_min_m2</code></td><td>Ombrières PV minimales (scénario mixte)</td><td class="num">1 421</td></tr>
+    <tr><td><code>kwc_min</code> / <code>kwc_max</code></td><td>Puissance estimée</td><td class="num">284 / 812</td></tr>
+    <tr><td><code>sanction_max_eur</code></td><td>Sanction annuelle plafond</td><td class="num">20 000</td></tr>
+  </tbody>
+</table>
+
+<h2>Ce que le fichier ne contient pas — et pourquoi</h2>
+<p>Ni noms de personnes, ni téléphones, ni emails. Un parc de stationnement est un lieu ; la personne à
+qui vous allez parler n'est pas une donnée publique, et nous ne la revendons pas. Vous prospectez des
+entreprises et des collectivités, pas des individus — c'est plus sain, et c'est légal sans discussion.</p>
+<p>Nous ne savons pas non plus quels parcs sont <em>déjà</em> équipés : aucune donnée publique ne
+l'indique. Toute liste qui prétend le contraire vous vend une affirmation, pas une donnée. Nous livrons
+le recensement, la surface et la géométrie ; le contrôle terrain reste votre métier, et c'est ce qui fait
+votre valeur.</p>
+
+<h2>Questions fréquentes</h2>
+<h3>Pourquoi payer alors que les données IGN sont gratuites ?</h3>
+<p>Parce que la couche IGN contient 200 000 objets dont 75 % sous le seuil légal, sans commune utile
+dans le fichier brut, sans calcul d'échéance, sans estimation de puissance, et qu'elle demande une
+extraction WFS que personne n'a envie de refaire chaque mois. Vous payez le tri, le calcul et la mise à
+jour, pas la donnée.</p>
+<h3>L'exclusivité territoriale, vous la proposez ?</h3>
+<p>Non. Un fichier n'est pas un terrain : le premier arrivé ne « réserve » pas un département. Nous
+préférons un prix bas et un accès immédiat à une exclusivité invérifiable facturée à l'année.</p>
+<h3>Puis-je revendre le fichier ?</h3>
+<p>Non, usage interne. L'usage commercial dérivé (intégration dans un outil que vous vendez) demande une
+licence séparée : écrivez-nous.</p>
+<h3>Et si le fichier ne correspond pas ?</h3>
+<p>La méthode est publiée, les sources sont publiques et vous pouvez vérifier chaque ligne. Si le fichier
+livré est incomplet par rapport au recensement annoncé sur la page du département, nous le complétons ou
+nous remboursons.</p>
+
+<h2>Prévisualisation gratuite</h2>
+<p>Chaque page départementale affiche les 20 plus grands parcs avec leur surface et leur échéance, sans
+inscription. <a href="departements.html">Voir les départements →</a></p>
+</main>
+
+<footer><div class="wrap">
+  <div class="footlinks">
+    <a href="methode.html">Méthode &amp; sources</a>
+    <a href="departements.html">Tous les départements</a>
+    <a href="index.html">Vérificateur</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="cgv.html">CGV</a>
+  </div>
+  <p>Parkings APER — données publiques IGN (BD TOPO). Ce site n'est pas un service officiel et ne
+  constitue pas un conseil juridique.</p>
+</div></footer>
+<script src="assets/config.js"></script>
+<script>
+(function(){
+  var btn = document.getElementById('order-btn');
+  var msg = document.getElementById('order-msg');
+  var inp = document.getElementById('order-dept');
+  btn.addEventListener('click', function(){
+    var v = (inp.value || '').trim();
+    if (!v) { inp.focus(); return; }
+    var link = window.STRIPE_LINKS && window.STRIPE_LINKS[v.toLowerCase()];
+    if (link) { window.location.href = link; return; }
+    var subject = encodeURIComponent('Commande fichier Parkings APER — ' + v);
+    var body = encodeURIComponent(
+      'Bonjour,\n\nJe souhaite commander le fichier du département : ' + v + ' (149 € TTC).\n\n' +
+      'Raison sociale :\nSIRET :\nAdresse de facturation :\n\nCordialement,\n');
+    msg.textContent = 'Le paiement en ligne par carte est en cours d\'activation. En attendant, votre commande part par email avec le lien de paiement sécurisé.';
+    window.location.href = 'mailto:' + window.CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
+  });
+})();
+</script>
+</body>
+</html>

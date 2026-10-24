@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Méthode et sources — Parkings APER</title>
+<meta name="description" content="Comment nous recensons les parcs de stationnement de plus de 1 500 m² : source IGN, seuils légaux, formules de calcul, limites assumées.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html">Parkings<span>APER</span></a>
+  <nav class="top">
+    <a href="index.html#verifier">Vérifier un parking</a>
+    <a href="departements.html">Départements</a>
+    <a href="installateurs.html">Installateurs</a>
+    <a href="methode.html">Méthode &amp; sources</a>
+  </nav>
+</div></header>
+
+<main class="wrap legal">
+<h1>Méthode et sources</h1>
+<p class="lead">Tout ce que nous affirmons est vérifiable. Voici exactement d'où viennent les chiffres,
+comment ils sont calculés, et ce qu'ils ne disent pas.</p>
+
+<h2>1. Le texte</h2>
+<p>Article 40 de la loi n° 2023-175 du 10 mars 2023 (APER). Modalités : décret n° 2024-1023 du
+13 novembre 2024. Assouplissement du 26 novembre 2025 (loi n° 2025-1129) autorisant l'ombrage mixte,
+ombrières + végétalisation. Conditions de report : décret du 7 septembre 2026.</p>
+<p>Seuils : 1 500 m² en métropole, Guadeloupe et Martinique ; 1 000 m² à La Réunion ; 2 500 m² en
+Guyane. Échéance : 1<sup>er</sup> juillet 2026 pour les parcs de 10 000 m² et plus, 1<sup>er</sup> juillet
+2028 pour ceux de 1 500 à 10 000 m². Sanction administrative : jusqu'à 20 000 €/an (1 500–10 000 m²) et
+40 000 €/an (≥ 10 000 m²), renouvelable jusqu'à mise en conformité.</p>
+
+<h2>2. Le recensement</h2>
+<p>Source unique : la couche <code>PARKING.SUP.500:parkings_sup500m2</code> du Géoportail de l'IGN
+(BD TOPO), servie en WFS sur <code>data.geopf.fr</code> et publiée sous Licence Ouverte 2.0. Elle décrit
+les surfaces de stationnement extérieur de plus de 500 m², avec pour chaque objet sa surface en m², sa
+commune, son code INSEE et sa géométrie polygonale.</p>
+<p>Extraction du 24/10/2026, département par département (96 départements de métropole et Corse). Seuil
+légal appliqué : <code>surface ≥ 1 500 m²</code>. Aucune donnée achetée, aucune donnée saisie à la main,
+aucune donnée inventée.</p>
+
+<h2>3. Les calculs</h2>
+<table>
+  <thead><tr><th>Indicateur</th><th>Formule</th></tr></thead>
+  <tbody>
+    <tr><td>Surface à ombrager</td><td>50 % de la surface du parc</td></tr>
+    <tr><td>Ombrières PV minimales (scénario mixte)</td><td>35 % de la surface à ombrager, soit 17,5 % de la surface totale</td></tr>
+    <tr><td>Puissance PV</td><td>200 Wc par m² couvert, soit 0,2 × surface PV (kWc)</td></tr>
+    <tr><td>Production annuelle</td><td>1 100 kWh par kWc installé (moyenne France prudente)</td></tr>
+    <tr><td>Tranche et échéance</td><td>≥ 10 000 m² → 2026-07-01 ; 1 500–10 000 m² → 2028-07-01</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Ce que le recensement ne dit pas</h2>
+<p><b>Il ne dit pas si un parc est soumis.</b> La couche IGN couvre tous les parcs extérieurs
+cartographiés, y compris des parcs résidentiels, des parcs de personnel ou des parcs déjà couverts. Nous
+ne prétendons pas appliquer les exonérations du décret (contraintes techniques, ombrage arboré existant,
+coût disproportionné, suppression programmée) : elles supposent une attestation et une étude que seule
+une visite de site permet.</p>
+<p><b>Il ne dit pas si un parc est déjà équipé.</b> Aucune donnée publique ne recense les ombrières
+existantes parc par parc. Toute liste qui affirme le contraire vend une affirmation, pas une donnée.</p>
+<p><b>La surface n'est pas exactement celle du décret.</b> Le décret exclut du calcul les espaces verts,
+les zones de stockage et les voiries réservées aux poids lourds. La couche IGN mesure l'emprise de
+stationnement, ce qui en est une bonne approximation, pas une mesure contradictoire.</p>
+<p><b>Il n'est pas exhaustif.</b> Un parc non cartographié par l'IGN, ou créé après la dernière mise à
+jour, peut manquer. Le recensement est un point de départ solide, pas une preuve d'existence ou
+d'inexistence.</p>
+
+<h2>5. Pourquoi nous publions la méthode</h2>
+<p>Parce qu'un fichier qu'on ne peut pas vérifier ne vaut rien. Si vous doutez d'une ligne, ouvrez le
+Géoportail de l'urbanisme ou le visualiseur IGN, entrez les coordonnées et comparez. Si vous trouvez une
+erreur, écrivez-nous : nous corrigeons et nous vous le disons.</p>
+
+<h2>6. Mise à jour</h2>
+<p>Recensement du 24/10/2026. L'IGN met à jour ses couches en continu ; nous relançons l'extraction à
+chaque trimestre. La date de dernière extraction est affichée sur chaque page départementale.</p>
+</main>
+
+<footer><div class="wrap">
+  <div class="footlinks">
+    <a href="methode.html">Méthode &amp; sources</a>
+    <a href="departements.html">Tous les départements</a>
+    <a href="index.html">Vérificateur</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="cgv.html">CGV</a>
+  </div>
+  <p>Parkings APER — données publiques IGN (BD TOPO). Ce site n'est pas un service officiel et ne
+  constitue pas un conseil juridique.</p>
+</div></footer>
+</body>
+</html>

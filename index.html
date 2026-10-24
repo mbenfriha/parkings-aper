@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parkings APER — votre parking est-il concerné par l'obligation d'ombrières ?</title>
+<meta name="description" content="Vérifiez en 10 secondes si un parking extérieur est soumis à l'obligation d'ombrières photovoltaïques (loi APER, art. 40) : surface, échéance, surface à ombrager, puissance et sanction. Recensement IGN de 85 606 parkings de plus de 1 500 m².">
+<link rel="canonical" href="https://parkings-aper.fr/">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html">Parkings<span>APER</span></a>
+  <nav class="top">
+    <a href="index.html#verifier">Vérifier un parking</a>
+    <a href="departements.html">Départements</a>
+    <a href="installateurs.html">Installateurs</a>
+    <a href="methode.html">Méthode &amp; sources</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<div class="hero">
+  <h1>Votre parking fait plus de 1 500 m².<br>La loi vous impose des ombrières.</h1>
+  <p class="lead">Depuis le 1<sup>er</sup> juillet 2026, les parcs de stationnement extérieurs de plus de
+  10 000 m² doivent être ombragés à 50 % par des ombrières photovoltaïques. Ceux de 1 500 à 10 000 m²
+  ont jusqu'au 1<sup>er</sup> juillet 2028. Sanction : jusqu'à 40 000 € par an et par parc, renouvelable.</p>
+</div>
+
+<section class="tool" id="verifier">
+  <h2>Vérifier un parking</h2>
+  <p>Entrez l'adresse du parking. Nous cherchons sa surface réelle dans le recensement IGN, puis nous
+  calculons ce que la loi vous impose. Aucune inscription, aucune donnée personnelle.</p>
+  <div class="row">
+    <input type="text" id="addr" placeholder="Ex. : 12 avenue des Champs, Melun" autocomplete="off">
+    <button class="btn" id="go" onclick="document.getElementById('addr').dispatchEvent(new Event('input'))">Vérifier</button>
+  </div>
+  <ul id="suggestions"></ul>
+  <div id="result"></div>
+</section>
+
+<section>
+  <div class="kpis">
+    <div class="kpi"><b>85 606</b><span>parkings ≥ 1 500 m² recensés</span></div>
+    <div class="kpi"><b>6 597</b><span>parkings ≥ 10 000 m²</span></div>
+    <div class="kpi"><b>397 km²</b><span>de surface de stationnement</span></div>
+    <div class="kpi"><b>13,9 GWc</b><span>potentiel PV estimé</span></div>
+  </div>
+  <p class="small muted">Recensement réalisé le 24/10/2026 sur la couche IGN « parkings de plus de 500 m² »
+  (BD TOPO), seuil légal de 1 500 m² appliqué, France métropolitaine et Corse. Ces chiffres décrivent
+  l'ensemble des parcs extérieurs recensés : tous ne sont pas soumis à l'obligation (exonérations, parcs
+  déjà couverts) — <a href="methode.html">voir la méthode</a>.</p>
+</section>
+
+<h2>Ce que la loi impose, concrètement</h2>
+<table>
+  <thead><tr><th>Surface du parc</th><th>Échéance de principe</th><th>Report possible</th><th class="num">Sanction max./an</th></tr></thead>
+  <tbody>
+    <tr><td>≥ 10 000 m²</td><td>1<sup>er</sup> juillet 2026</td><td>1<sup>er</sup> janvier 2028, sous conditions</td><td class="num">40 000 €</td></tr>
+    <tr><td>1 500 – 10 000 m²</td><td>1<sup>er</sup> juillet 2028</td><td>1<sup>er</sup> janvier 2030, sous conditions</td><td class="num">20 000 €</td></tr>
+  </tbody>
+</table>
+<p>Depuis la loi du 26 novembre 2025, l'ombrage peut être mixte : au moins 35 % de la moitié à ombrager
+doit être couvert par des ombrières photovoltaïques (soit 17,5 % de la surface totale du parc), le reste
+pouvant être végétalisé. Les reports supposent un contrat d'engagement avec acompte et un bon de commande
+avant des dates butoirs fixées par le décret du 7 septembre 2026.</p>
+
+<h2>Pourquoi ce sujet n'est pas réglé</h2>
+<p>La fédération professionnelle estime qu'à peine 10 à 15 % des sites concernés étaient conformes à la
+première échéance, et aucun observatoire public ne publie de taux de conformité consolidé. Résultat : des
+milliers d'exploitants qui doivent agir sans savoir précisément ce qu'ils doivent, et des installateurs
+qui cherchent les sites concernés dans des fichiers qu'ils n'ont pas.</p>
+
+<h2>Pour les installateurs et bureaux d'études</h2>
+<p>Nous publions, département par département, le recensement complet des parcs de stationnement
+extérieurs de plus de 1 500 m² : surface, commune, coordonnées, échéance applicable et puissance
+estimée. Pas d'exclusivité, pas d'abonnement annuel : un fichier, un prix, téléchargement immédiat.</p>
+<p><a class="btn" href="installateurs.html">Voir les fichiers par département →</a></p>
+
+<h2>Ce que nous ne faisons pas</h2>
+<p>Nous ne vendons pas de coordonnées personnelles, nous ne prétendons pas savoir si un parc est déjà
+équipé (aucune donnée publique ne le dit), et nous ne vous promettons pas de chantier. Nous livrons la
+matière : un recensement vérifiable, une méthode reproductible, et le calcul réglementaire à jour.</p>
+</main>
+
+<footer><div class="wrap">
+  <div class="footlinks">
+    <a href="methode.html">Méthode &amp; sources</a>
+    <a href="departements.html">Tous les départements</a>
+    <a href="installateurs.html">Offre installateurs</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="cgv.html">CGV</a>
+  </div>
+  <p>Parkings APER — données publiques IGN (BD TOPO), Etalab (BAN), Légifrance. Recensement du 24/10/2026.
+  Ce site n'est pas un service officiel et ne constitue pas un conseil juridique.</p>
+</div></footer>
+<script>window.DEPT_NAMES={};</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

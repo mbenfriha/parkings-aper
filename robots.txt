@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://parkings-aper.fr/sitemap.xml
